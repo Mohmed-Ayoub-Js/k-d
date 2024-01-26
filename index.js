@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const port = 3002;
 const fs = require('fs');
+const cors = require('cors');
+app.use(cors());
 app.use(express.json());
 app.get('/' , (req , res) => {
     fs.readFile('data.json', 'utf8', (err, data) => {
